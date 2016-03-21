@@ -5,6 +5,7 @@ This script initilizes simple python node.
 #-*- encoding: utf-8 -*-
 __author__ = 'shehzad ahmed'
 import rospy
+
 #State machine Start
 
 
@@ -13,7 +14,7 @@ import rospy
 #State machine end
 
 
-#login start here
+#logic start here
 
 
 
@@ -25,9 +26,8 @@ def initlize_node():
     Initilize node and spin which simply keeps python 
     from exiting until this node is stopped
     '''
-    rospy.init_node('ros_python_simple_node', anonymous=True)
-    rospy.loginfo("ros_python_simple_node is now running")
-
+    rospy.init_node('ros_plate_detection_node', anonymous=True)
+    rospy.loginfo("ros_plate_detection_node is now running")
     rospy.spin()
 
 if __name__ == '__main__':

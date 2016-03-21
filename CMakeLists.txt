@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ros_plate_detection)
+project(ros_plate_detection_node)
 
 find_package(catkin REQUIRED COMPONENTS
   rospy
