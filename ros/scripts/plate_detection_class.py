@@ -27,7 +27,7 @@ class Plate_Detector():
 
     def prepare_publishers(self):
         # Publishers
-        eventout_msg_pub = rospy.Publisher("~/event_out", String, queue_size=100)
-        shape_msg_pub = rospy.Publisher("~/shape", String, queue_size=100)
+        self.eventout_msg_pub = rospy.Publisher("~/event_out", String, queue_size=100)
+        self.shape_msg_pub = rospy.Publisher("~/shape", String, queue_size=100)
 
         
