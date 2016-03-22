@@ -9,12 +9,21 @@ class Plate_Detector():
     def __init__(self):
         self.prepare_subscribers()
         self.prepare_publishers()
+        # State for the state machine
+        self.state = 'e_stop'
 
     def eventin_handler(self, msg):
         rospy.loginfo('eventin msg received, data = %s', msg.data)
+        # Adjust the state
+        self.state = msg
 
     def image_handler(self, msg):
-        rospy.loginfo('image msg received')
+        # If we received an image and are in the start state, we start img recognition
+        if (self.state == 'e_start'):
+            rospy.loginfo('image msg received')
+            # Call the img recognition function with our img (msg) here
+            
+
 
     def prepare_subscribers(self):
         # Our eventin subscriber, listens to topic event_in
