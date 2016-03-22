@@ -2,7 +2,7 @@
 <package>
   <name>ros_plate_detection_node</name>
   <version>0.1.0</version>
-  <description>ros_plate_detection</description>
+  <description>The ros_plate_detection node</description>
 
   <maintainer email="vladimir.krasin@gmail.com">Vlad</maintainer>
 
