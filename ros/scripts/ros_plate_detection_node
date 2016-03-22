@@ -5,6 +5,7 @@ This script initilizes simple python node.
 #-*- encoding: utf-8 -*-
 __author__ = 'shehzad ahmed'
 import rospy
+from plate_detection_class import *
 
 #State machine Start
 
@@ -21,13 +22,22 @@ import rospy
 
 #logic end
 
+def eventin_handler(msg):
+    rospy.loginfo('eventin msg received, data = %s', msg.data)
+
+def image_handler(msg):
+    rospy.loginfo('image msg received')
+
 def initlize_node():
     '''
     Initilize node and spin which simply keeps python 
     from exiting until this node is stopped
     '''
-    rospy.init_node('ros_plate_detection_node', anonymous=True)
+    rospy.init_node('ros_plate_detection_node', anonymous=False)
     rospy.loginfo("ros_plate_detection_node is now running")
+
+    plate_detector = Plate_Detector()
+    
     rospy.spin()
 
 if __name__ == '__main__':
