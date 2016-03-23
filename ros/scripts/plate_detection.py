@@ -12,7 +12,7 @@ def getMatch(kp_template, des_template, img_target):
     surf = cv2.xfeatures2d.SURF_create()
 
     # Get the keypoints and descriptors from the target
-    kp_target, des_target = surf.detectAndCompute(edges,None)
+    kp_target, des_target = surf.detectAndCompute(gray,None)
     
     # Match template and target
     bf = cv2.BFMatcher()
