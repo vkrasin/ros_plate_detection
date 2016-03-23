@@ -7,12 +7,12 @@ from matplotlib import pyplot as plt
 def getMatch(kp_template, des_template, img_target):
     # Convert target image to grayscale
     gray = cv2.cvtColor(img_target,cv2.COLOR_BGR2GRAY)
-    
+
     # Extract features with surf
     surf = cv2.xfeatures2d.SURF_create()
 
     # Get the keypoints and descriptors from the target
-    kp_target, des_target = surf.detectAndCompute(gray,None)
+    kp_target, des_target = surf.detectAndCompute(edges,None)
     
     # Match template and target
     bf = cv2.BFMatcher()
